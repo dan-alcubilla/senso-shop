@@ -1,11 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import { Product } from "../../../assets/types/product";
 
 
 export const ProductListItem = ({ product }: { product: Product }) => {
     return (
-        <View>
-            <Text>ProductListItem</Text>
+        <View style={styles.item}>
+            <View style={styles.itemImageContainer}>
+                <Image source={product.heroImage} style={styles.itemImage} />
+            </View>
+            <View style={styles.itemTexContainer}>
+                <Text style={styles.itemTitle}>{product.title}</Text>
+                <Text style={styles.itemPrice}>${product.price.toFixed(2)}</Text>
+            </View>
         </View>
     );
 };
@@ -32,5 +38,13 @@ const styles = StyleSheet.create({
         padding: 8,
         alignItems: 'flex-start',
         gap: 4,
+    },
+    itemTitle: {
+        fontSize: 16,
+        color: '#888',
+    },
+    itemPrice: {
+        fontSize: 14,
+        fontWeight: 'bold',
     },
 });
