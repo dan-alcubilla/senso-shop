@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
-import { Product } from "../../../assets/types/product";
+import { Product } from "../../assets/types/product";
 import { Link } from "expo-router";
 
 
