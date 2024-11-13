@@ -1,10 +1,39 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import React from "react";
+import { Link } from "expo-router";
+import { FontAwesome } from '@expo/vector-icons';
 
 export const ListHeader = () => {
     return (
         <View style={[styles.headerContainer]}>
-            <View style={styles.headerTop}></View>
+            <View style={styles.headerTop}>
+                <View style={styles.headerLeft}>
+                    <View style={styles.avatarContainer}>
+                        <Image
+                            source={{ uri: 'https://via.placeholder.com/40' }}
+                            style={styles.avatarImage}
+                        />
+                        <Text style={styles.avatarText}>Hello Alexis</Text>
+                    </View>
+                </View>
+                <Link style={styles.cartContainer} href='/cart' asChild>
+                    <Pressable>
+                        {({ pressed }) => (
+                            <View>
+                                <FontAwesome
+                                    name='shopping-cart'
+                                    size={25}
+                                    color='gray'
+                                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                />
+                                <View style={styles.badgeContainer}>
+                                    <Text style={styles.badgeText}>{1}</Text>
+                                </View>
+                            </View>
+                        )}
+                    </Pressable>
+                </Link>
+            </View>
             <View style={styles.heroContainer}></View>
             <View style={styles.categoriesContainer}></View>
         </View>
