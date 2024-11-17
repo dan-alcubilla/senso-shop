@@ -39,7 +39,12 @@ export const ListHeader = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={styles.heroContainer}></View>
+            <View style={styles.heroContainer}>
+                <Image 
+                    source={require('../../assets/images/hero.png')}
+                    style={styles.heroImage}
+                />
+            </View>
             <View style={styles.categoriesContainer}></View>
         </View>
     );
